@@ -6,7 +6,7 @@
 		<?php foreach ($staffs as $staff): ?>
             <div class="col-md-4">
                 <div class="thumbnail text-center" style="padding:15px">
-                    <img class="img-circle responsive-img" src="<?= $this->Html->url(array('controller' => 'API', 'action' => 'get_head_skin/', 'plugin' => false)) ?>/<?= $staff['Staff']['username'] ?>/64" alt="">
+                    <img class="img-circle responsive-img" src="<?= $this->Html->url(array('controller' => 'API', 'action' => 'get_head_skin/', 'plugin' => false, $staff['Staff']['username'], 64)) ?>" alt="">
                 
                     <p class="staff-username"><?= $staff['Staff']['username'] ?></p>
                     <p class="staff-rank" style="color:<?= $staff['Staff']['color'] ?>"><?= $staff['Staff']['rank'] ?></p>
