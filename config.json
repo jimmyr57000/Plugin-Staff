@@ -1,0 +1,25 @@
+{
+  "name":"Staff",
+  "admin_menus": {
+    "GLOBAL__CUSTOMIZE": {
+      "Staff": {
+        "icon": "users",
+        "route": "/admin/staff"
+      }
+    }
+  },
+  "author":"PHPierre",
+  "version":"1.0.0",
+  "apiID":-1,
+  "useEvents":false,
+  "permissions" : {
+    "available" : [],
+    "default" : {
+      "0" : [],
+      "2" : []
+    }
+  },
+  "requirements" : {
+    "CMS" : "^1.5.8"
+  }
+}

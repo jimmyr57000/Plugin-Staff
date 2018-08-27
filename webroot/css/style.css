@@ -1,0 +1,39 @@
+.staff-username, .staff-rank{
+	font-size: 20px;
+}
+
+.staff-i > i{
+	margin-bottom: 10px;
+}
+
+.staff-facebook{
+	color: #3b5999 !important;
+}
+
+.staff-reddit{
+	color: #ff5700 !important;
+}
+
+.staff-twitter{
+	color: #55acee !important;
+}
+
+.staff-googleplus{
+	color: #dd4b39 !important;
+}
+
+.staff-youtube{
+	color: #cd201f !important;
+}
+
+.staff-weibo{
+	color: #df2029 !important;
+}
+
+.staff-github{
+	color: #333 !important;
+}
+
+.staff-instagram{
+	color: #e4405f !important;
+}
