@@ -91,7 +91,7 @@ class StaffController extends AppController
 			
 			$staff = $this->Staff->get($id);
 
-			$this->set(compact('staff'));
+			$this->set(compact('staff', 'id'));
 		} else {
 			$this->redirect('/');
 		}

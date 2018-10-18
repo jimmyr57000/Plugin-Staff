@@ -86,7 +86,7 @@ class Staff extends StaffAppModel
 			'youtube_url' => $youtube,
 			'weibo_url' => $weibo,
 			'github_url' => $github,
-			'instagram' => $instagram
+			'instagram_url' => $instagram
 		], ['id' => $id]);
 	}
 	
