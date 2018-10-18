@@ -14,7 +14,7 @@ class StaffAppSchema extends CakeSchema
 	
 	public $staff__staffs = [
 		'id' => ['type' => 'integer', 'null' => false, 'default' => null, 'length' => 20, 'unsigned' => false, 'key' => 'primary'],
-		'order' => ['type' => 'boolean', 'null' => false, 'default' => 1, 'length' => 1, 'unsigned' => false],
+		'order' => ['type' => 'integer', 'null' => false, 'default' => null, 'length' => 8, 'unsigned' => false],
 		'username' => ['type' => 'text', 'null' => false, 'default' => null, 'length' => 100, 'unsigned' => false],
 		'rank' => ['type' => 'text', 'null' => false, 'default' => null, 'length' => 100, 'unsigned' => false],
 		'color' => ['type' => 'text', 'null' => true, 'default' => null, 'length' => 6, 'unsigned' => false],
