@@ -1,16 +1,18 @@
 {
   "name":"Staff",
   "admin_menus": {
-    "GLOBAL__CUSTOMIZE": {
+    "GLOBAL__ADMIN_PLUGINS": {
       "Staff": {
         "icon": "users",
         "route": "/admin/staff"
       }
     }
   },
+   "navbar_routes":{
+      "Staff":"/staff"
+   },
   "author":"PHPierre",
-  "version":"1.0.1",
-  "apiID":-1,
+  "version":"1.0.2",
   "useEvents":false,
   "permissions" : {
     "available" : [],
