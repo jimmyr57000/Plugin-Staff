@@ -1,3 +1,3 @@
 <?php
 
-Router::connect('/staff', ['controller' => 'staff', 'action' => 'index', 'plugin' => 'Staff']);
+Router::connect('/staff', ['controller' => 'staff', 'action' => 'index', 'plugin' => 'staff']);
