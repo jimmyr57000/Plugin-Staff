@@ -27,11 +27,11 @@
                         <tbody>
                             <?php foreach ($staffs as $staff): ?>
                                 <tr>
-                                    <td><?= $staff['Staff']['username'] ?></td>
-                                    <td><?= $staff['Staff']['order']; ?></td>
+                                    <td><?= $staff['StaffListing']['username'] ?></td>
+                                    <td><?= $staff['StaffListing']['order']; ?></td>
                                     <td class="right">
-                                        <a href="<?= $this->Html->url(array('controller' => 'staff', 'action' => 'edit/'.$staff['Staff']['id'], 'admin' => true, 'plugin' => 'staff')) ?>" class="btn btn-info"><?= $Lang->get('GLOBAL__EDIT') ?></a>
-                                        <a onClick="confirmDel('<?= $this->Html->url(array('controller' => 'staff', 'action' => 'delete/'.$staff['Staff']['id'], 'admin' => true, 'plugin' => 'staff')) ?>')" class="btn btn-danger"><?= $Lang->get('GLOBAL__DELETE') ?></a>
+                                        <a href="<?= $this->Html->url(array('controller' => 'staff', 'action' => 'edit/'.$staff['StaffListing']['id'], 'admin' => true, 'plugin' => 'staff')) ?>" class="btn btn-info"><?= $Lang->get('GLOBAL__EDIT') ?></a>
+                                        <a onClick="confirmDel('<?= $this->Html->url(array('controller' => 'staff', 'action' => 'delete/'.$staff['StaffListing']['id'], 'admin' => true, 'plugin' => 'staff')) ?>')" class="btn btn-danger"><?= $Lang->get('GLOBAL__DELETE') ?></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
