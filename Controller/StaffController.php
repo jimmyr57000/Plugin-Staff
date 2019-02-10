@@ -3,11 +3,15 @@
 class StaffController extends AppController
 {
 	public function index()
-	{
-		$this->loadModel('Staff.Staff');
-		
-		$staffs = $this->Staff->get();
-		
+    {
+        $this->loadModel('Staff.StaffListing');
+
+        $staffs = $this->StaffListing->get();
+        $i = 0;
+        if (!empty($staffs)) foreach ($staffs as $v) {
+            $staffs[$i]['Staff'] = $v['StaffListing'];
+            $i++;
+        }
 		$this->set(compact('staffs'));
 	}
 	
@@ -16,9 +20,9 @@ class StaffController extends AppController
 		if ($this->isConnected AND $this->User->isAdmin()) {
 			$this->layout = 'admin';
 			
-			$this->loadModel('Staff.Staff');
+			$this->loadModel('Staff.StaffListing');
 			
-			$staffs = $this->Staff->get();
+			$staffs = $this->StaffListing->get();
 			
 			$this->set(compact('staffs'));
 		} else {
@@ -34,9 +38,9 @@ class StaffController extends AppController
 			if ($this->request->is('ajax')) {
 				$this->autoRender = false;
 				
-				$this->loadModel('Staff.Staff');
+				$this->loadModel('Staff.StaffListing');
 				
-				$this->Staff->add(
+				$this->StaffListing->add(
 					$this->request->data['order'],
 					$this->request->data['username'],
 					$this->request->data['rank'],
@@ -63,14 +67,14 @@ class StaffController extends AppController
 		if ($this->isConnected AND $this->User->isAdmin()) {
 			$this->layout = 'admin';
 			
-			$this->loadModel('Staff.Staff');
+			$this->loadModel('Staff.StaffListing');
 			
-			if (!$this->Staff->exist($id)) $this->redirect('/admin/staff');
+			if (!$this->StaffListing->exist($id)) $this->redirect('/admin/staff');
 			
 			if ($this->request->is('ajax')) {
 				$this->autoRender = false;
 				
-				$this->Staff->edit(
+				$this->StaffListing->edit(
 					$id,
 					$this->request->data['order'],
 					$this->request->data['username'],
@@ -89,7 +93,7 @@ class StaffController extends AppController
 				$this->response->body(json_encode(array('statut' => true, 'msg' => $this->Lang->get('STAFF__ADD_SUCCESS'))));
 			}
 			
-			$staff = $this->Staff->get($id);
+			$staff = $this->StaffListing->get($id);
 
 			$this->set(compact('staff', 'id'));
 		} else {
@@ -101,11 +105,11 @@ class StaffController extends AppController
 	{
 		if ($this->isConnected AND $this->User->isAdmin()) {
 			
-			$this->loadModel('Staff.Staff');
+			$this->loadModel('Staff.StaffListing');
 			
-			if (!$this->Staff->exist($id)) $this->redirect('/admin/staff');
+			if (!$this->StaffListing->exist($id)) $this->redirect('/admin/staff');
 			
-			$this->Staff->_delete($id);
+			$this->StaffListing->_delete($id);
 			$this->redirect('/admin/staff');
 		} else {
 			$this->redirect('/');

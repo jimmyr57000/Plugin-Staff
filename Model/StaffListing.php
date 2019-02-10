@@ -1,7 +1,7 @@
 <?php
-class Staff extends StaffAppModel
+class StaffListing extends StaffAppModel
 {
-
+    public $useTable = "staffs";
     public function get($id = false)
     {
         if ($id) return $this->find('all', ['conditions' => ['id' => $id]])[0];
@@ -42,7 +42,7 @@ class Staff extends StaffAppModel
 			'youtube_url' => $youtube,
 			'weibo_url' => $weibo,
 			'github_url' => $github,
-			'instagram' => $instagram
+			'instagram_url' => $instagram
 		]);
 		return $this->save();
 	}
